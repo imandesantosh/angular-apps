@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Angular-apps</title>
+  <base href="https://sanntify.github.io/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.18/chance.min.js"></script> -->
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/EaselPlugin.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineLite.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+  <script content-type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="styles.9c0fe850fc242e148df4.css"></head>
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    $(document).ready(function(){
+      var $demoText = $(".split");
+      //Split the text into characters and wrap every character into span element, then convert the whitespaces to whitespace characters.
+      $demoText.html($demoText.html().replace(/./g, '<span>$&</span>').replace(/\s/g, "&nbsp;"));
+  
+      // $demoText.find("span").each(function () {
+      //   $(this).css({ 'position': 'relative', 'display': 'flex-inline', 'flex-direction': 'row' })
+      //   $(this).addClass('animated infinite bounce delay-2s')
+      // });
+  
+      var tl = new TimelineMax({ autoAlpha: 0, repeat: -1 })
+  
+      tl.staggerFromTo($demoText.find("span"), 0.4, {
+        autoAlpha: 0,
+        scale: 8,
+        repeat: -1
+      }, {
+          autoAlpha: 1,
+          scale: 1
+        }, 0.1); 
+    });
+  </script>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.9f83624c7bb370dcef03.js"></script><script type="text/javascript" src="scripts.6cf4da7113bcd1218d80.js"></script><script type="text/javascript" src="main.ef4d614d7c83c7de93cf.js"></script></body>
+
+</html>
